@@ -219,8 +219,8 @@ kbd {
 .tree-chevron,
 .tree-chevron-spacer {
   flex-shrink: 0;
-  width: 16px;
-  text-align: center;
+  width: 20px;
+  height: 20px;
   user-select: none;
 }
 
@@ -228,22 +228,36 @@ kbd {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: 1.7em;
   margin: 0;
   padding: 0;
   border: none;
   background: transparent;
-  color: var(--color-text-tertiary);
-  font-family: var(--font-mono);
-  font-size: 11px;
-  line-height: 1;
   cursor: pointer;
-  border-radius: 3px;
+  border-radius: 4px;
+  position: relative;
+}
+
+.tree-chevron::before {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  border-left: 5px solid var(--color-text-tertiary);
+  transition: transform 0.15s ease;
+}
+
+.tree-chevron.is-expanded::before {
+  transform: rotate(90deg);
 }
 
 .tree-chevron:hover {
-  color: var(--color-text-primary);
   background: var(--color-border-tertiary);
+}
+
+.tree-chevron:hover::before {
+  border-left-color: var(--color-text-primary);
 }
 
 .tree-chevron-spacer {
@@ -355,30 +369,34 @@ kbd {
   border-radius: 50%;
 }
 
-.tree-controls {
-  width: 100%;
-  margin-top: 0.25rem;
+.tree-toolbar {
+  display: flex;
+  gap: 8px;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 0.5px solid var(--color-border-tertiary);
 }
 
-.tree-control-btn {
+.tree-toolbar-btn {
   font-family: var(--font-sans);
   font-size: 12px;
-  padding: 0;
-  border: none;
-  background: transparent;
-  color: var(--color-accent);
+  padding: 0.35rem 0.75rem;
+  border: 0.5px solid var(--color-border-secondary);
+  border-radius: 6px;
+  background: var(--color-background-primary);
+  color: var(--color-text-secondary);
   cursor: pointer;
-  text-decoration: underline;
-  text-underline-offset: 2px;
 }
 
-.tree-control-btn:hover {
-  color: #3d3694;
+.tree-toolbar-btn:hover {
+  background: var(--color-background-secondary);
+  color: var(--color-text-primary);
+  border-color: var(--color-border-secondary);
 }
 
-.tree-control-sep {
-  color: var(--color-text-tertiary);
-  margin: 0 4px;
+.legend-note {
+  font-style: italic;
+  width: 100%;
 }
 
 @media (max-width: 900px) {
