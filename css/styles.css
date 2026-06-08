@@ -207,9 +207,47 @@ kbd {
   gap: 0;
   line-height: 1.7;
   cursor: default;
-  padding: 1px 4px;
+  padding: 1px 4px 1px 0;
   border-radius: 4px;
   border-left: 2px solid transparent;
+}
+
+.tree-section-gap {
+  height: 4px;
+}
+
+.tree-chevron,
+.tree-chevron-spacer {
+  flex-shrink: 0;
+  width: 16px;
+  text-align: center;
+  user-select: none;
+}
+
+.tree-chevron {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.7em;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-text-tertiary);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  line-height: 1;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.tree-chevron:hover {
+  color: var(--color-text-primary);
+  background: var(--color-border-tertiary);
+}
+
+.tree-chevron-spacer {
+  display: inline-block;
 }
 
 .tree-line:hover .label { color: var(--color-text-primary); }
@@ -315,6 +353,32 @@ kbd {
   width: 10px;
   height: 10px;
   border-radius: 50%;
+}
+
+.tree-controls {
+  width: 100%;
+  margin-top: 0.25rem;
+}
+
+.tree-control-btn {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: var(--color-accent);
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.tree-control-btn:hover {
+  color: #3d3694;
+}
+
+.tree-control-sep {
+  color: var(--color-text-tertiary);
+  margin: 0 4px;
 }
 
 @media (max-width: 900px) {
