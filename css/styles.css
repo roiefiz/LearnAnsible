@@ -212,6 +212,11 @@ kbd {
   border-left: 2px solid transparent;
 }
 
+.tree-line[hidden],
+.tree-section-gap[hidden] {
+  display: none !important;
+}
+
 .tree-section-gap {
   height: 4px;
 }
@@ -245,6 +250,7 @@ kbd {
   border-top: 4px solid transparent;
   border-bottom: 4px solid transparent;
   border-left: 5px solid var(--color-text-tertiary);
+  transform-origin: 40% 50%;
   transition: transform 0.15s ease;
 }
 
@@ -372,9 +378,9 @@ kbd {
 .tree-toolbar {
   display: flex;
   gap: 8px;
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 0.5px solid var(--color-border-tertiary);
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 0.5px solid var(--color-border-tertiary);
 }
 
 .tree-toolbar-btn {

@@ -144,11 +144,6 @@
 
   function collapseAll() {
     expanded.clear();
-    hierarchy.forEach(function (node) {
-      if (node.isFolder && node.children.length > 0) {
-        expanded.add(node.id);
-      }
-    });
     updateTreeVisibility();
   }
 
