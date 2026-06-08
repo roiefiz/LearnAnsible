@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Ansible — Project Tree Explorer</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Learn Ansible</h1>
+    <p class="subtitle">Explore a real-world project tree — hover for quick tips, click highlighted files for full code</p>
+  </header>
+
+  <main class="split">
+    <aside class="tree-pane">
+      <div class="tree-wrap">
+        <div id="tooltip" class="tooltip"></div>
+        <div id="tree"></div>
+        <div class="legend">
+          <div class="legend-item"><div class="dot" style="background:#534AB7"></div> Ansible files</div>
+          <div class="legend-item"><div class="dot" style="background:#3B6D11"></div> Frontend</div>
+          <div class="legend-item"><div class="dot" style="background:#185FA5"></div> Backend</div>
+          <div class="legend-item"><div class="dot" style="background:#854F0B"></div> Config / infra</div>
+          <div class="legend-item legend-hint"><span class="sample-dot"></span> Click for code sample</div>
+          <div class="legend-item" style="font-style:italic">Hover any row for details</div>
+        </div>
+      </div>
+    </aside>
+
+    <section class="detail-pane">
+      <div id="detail-empty" class="detail-empty">
+        <h2>Welcome</h2>
+        <p>This explorer walks through a typical monorepo layout: <strong>frontend</strong>, <strong>backend</strong>, and <strong>ansible</strong> side by side.</p>
+        <p>Files with a <span class="sample-dot inline"></span> dot contain full, production-style code samples. Try this path:</p>
+        <ol class="welcome-path">
+          <li><code>ansible/ansible.cfg</code> — project defaults</li>
+          <li><code>ansible/playbooks/site.yml</code> — master playbook</li>
+          <li><code>ansible/roles/webserver/tasks/main.yml</code> — role tasks + handlers</li>
+          <li><code>ansible/vault/secrets.yml</code> — encrypted secrets pattern</li>
+        </ol>
+        <p class="hint">Press <kbd>Esc</kbd> to clear the selection.</p>
+      </div>
+
+      <div id="detail-content" class="detail-content" hidden>
+        <h2 id="detail-title"></h2>
+        <p id="detail-info" class="detail-info"></p>
+        <div id="detail-no-sample" class="detail-no-sample" hidden>
+          <p>No code sample for this item yet. The explanation above still applies.</p>
+        </div>
+        <div id="detail-code-block" hidden>
+          <div class="code-toolbar">
+            <span id="detail-path" class="detail-path"></span>
+            <button id="copy-btn" type="button" class="copy-btn">Copy</button>
+          </div>
+          <pre class="code-pre"><code id="detail-code"></code></pre>
+          <p id="detail-run-hint" class="run-hint" hidden></p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-ini.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-json.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-docker.min.js"></script>
+  <script src="js/code-samples.js"></script>
+  <script src="js/tree-data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
